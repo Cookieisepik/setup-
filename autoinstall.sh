@@ -3,7 +3,7 @@
 echo Configurating packages...
 echo
 sudo apt update 
-sudo apt remove cosmic* -y
+sudo apt remove cosmic* gnome-shell gnome-desktop gnome-session xfce4* kde-* cinnamon-* mate-* lxde-* budgie-* -y
 sudo apt install git xdg-desktop-portal* lxpolkit qt5ct qt6ct thunar scrcpy blueman kitty sway swaybg flatpak flameshot steam discord -y
 flatpak install -y com.dec05eba.gpu_screen_recorder
 flatpak install -y com.github.tchx84.Flatseal
@@ -246,7 +246,7 @@ EOF
 
 echo Setting up misc stuff...
 echo
-sudo apt install git curl bluez-tools gir1.2-gtklayershell-0.1 libgtk-3-0 pulseaudio-utils gir1.2-dbusmenu-gtk3-0.4 gir1.2-playerctl-2.0 playerctl python3-dasbus python3-gi-cairo python3-i3ipc python3-pydbus python3-xlib -y
+sudo apt install git curl bluez-tools gir1.2-gtklayershell-0.1 libgtk-3-0 pulseaudio-utils gir1.2-dbusmenu-gtk3-0.4 gir1.2-playerctl-2.0 playerctl python3-dasbus python3-gi-cairo python3-i3ipc python3-dconf dconf-cli gsettings-desktop-schemas lxappearance libgtk-4-1 libgtk-3-common libgtk2.0-common -y
 git clone https://github.com/nwg-piotr/nwg-panel
 git clone https://github.com/nwg-piotr/nwg-icon-picker
 cd nwg-panel
