@@ -29,6 +29,7 @@ cat << 'EOF' > $HOME/.config/sway/config
 # mods 
 xwayland enable
 exec lxpolkit
+exec xhost +local:
 exec nwg-panel
 default_border none
 default_floating_border none
