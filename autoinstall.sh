@@ -253,5 +253,10 @@ systemctl enable ly@tty2.service
 
 wget https://raw.githubusercontent.com/Cookieisepik/setup-/refs/heads/main/a.png
 mv a.png $HOME/Documents/ 
+curl -sS https://starship.rs/install.sh | sh
+cat << 'EOF' > $HOME/.bashrc
+eval "$(starship init bash)"
+EOL
+
 echo finished!!
 
