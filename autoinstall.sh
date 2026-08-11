@@ -4,7 +4,7 @@ echo Configurating packages...
 echo
 sudo apt update 
 sudo apt remove cosmic* gnome-shell gnome-desktop gnome-session xfce4* kde-* cinnamon-* mate-* lxde-* budgie-* -y
-sudo apt install git xdg-desktop-portal* lxpolkit qt5ct qt6ct thunar scrcpy blueman kitty sway swaybg flatpak flameshot steam discord -y
+sudo apt install git xdg-desktop-portal* fuzzel lxpolkit qt5ct qt6ct thunar scrcpy blueman kitty sway swaybg flatpak flameshot steam discord -y
 flatpak install -y com.dec05eba.gpu_screen_recorder
 flatpak install -y com.github.tchx84.Flatseal
 flatpak install -y com.heroicgameslauncher.hgl
