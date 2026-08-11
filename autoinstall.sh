@@ -1,24 +1,25 @@
+#!/bin/bash
 #Autorice installer for Pop OS!
 echo Configurating packages...
 echo
 sudo apt update 
-sudo apt remove cosmic* 
+sudo apt remove cosmic* -y
 sudo apt install git xdg-desktop-portal* lxpolkit qt5ct qt6ct thunar scrcpy blueman kitty sway swaybg flatpak flameshot steam discord -y
-flatpak install com.dec05eba.gpu_screen_recorder
-flatpak install com.github.tchx84.Flatseal
-flatpak install com.heroicgameslauncher.hgl
-flatpak install io.github.peazip.PeaZip 
-flatpak install org.freedownloadmanager.Manager 
-flatpak install org.kartkrew.RingRacers
-flatpak install org.kde.krita
-flatpak install org.prismlauncher.PrismLauncher 
-flatpak install org.qbittorrent.qBittorrent
-flatpak install org.srb2.SRB2 
-flatpak install org.vinegarhq.Sober
-flatpak install ru.linux_gaming.PortProton 
+flatpak install -y com.dec05eba.gpu_screen_recorder
+flatpak install -y com.github.tchx84.Flatseal
+flatpak install -y com.heroicgameslauncher.hgl
+flatpak install -y io.github.peazip.PeaZip 
+flatpak install -y org.freedownloadmanager.Manager 
+flatpak install -y org.kartkrew.RingRacers
+flatpak install -y org.kde.krita
+flatpak install -y org.prismlauncher.PrismLauncher 
+flatpak install -y org.qbittorrent.qBittorrent
+flatpak install -y org.srb2.SRB2 
+flatpak install -y org.vinegarhq.Sober
+flatpak install -y ru.linux_gaming.PortProton 
 echo Configuring Sway config...
 echo
-mkdir $HOME/.config/sway/
+mkdir -p $HOME/.config/sway/
 cat << 'EOF' > $HOME/.config/sway/config
 # Default config for sway
 #
@@ -245,24 +246,23 @@ EOF
 
 echo Setting up misc stuff...
 echo
-sudo apt install git curl bluez-tools gir1.2-gtklayershell-0.1 libgtk-3-0 pulseaudio-utils gir1.2-dbusmenu-gtk3-0.4 gir1.2-playerctl-2.0 playerctl python3-dasbus python3-gi-cairo python3-i3ipc python3-netifaces python3-psutil python3-requests python3-setuptools python3-wheel sway-notification-center
+sudo apt install git curl bluez-tools gir1.2-gtklayershell-0.1 libgtk-3-0 pulseaudio-utils gir1.2-dbusmenu-gtk3-0.4 gir1.2-playerctl-2.0 playerctl python3-dasbus python3-gi-cairo python3-i3ipc python3-pydbus python3-xlib -y
 git clone https://github.com/nwg-piotr/nwg-panel
 git clone https://github.com/nwg-piotr/nwg-icon-picker
 cd nwg-panel
 sudo ./install.sh && cd ../nwg-icon-picker && sudo ./install.sh
 
-sudo apt install build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl zig
+sudo apt install build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl zig -y
 git clone --recurse-submodules https://github.com/fairyglade/ly
 cd ly
 zig build
-systemctl enable ly@tty2.service
+sudo systemctl enable ly@tty2.service
 
 wget https://raw.githubusercontent.com/Cookieisepik/setup-/refs/heads/main/a.png
 mv a.png $HOME/Documents/ 
 curl -sS https://starship.rs/install.sh | sh
 cat << 'EOF' > $HOME/.bashrc
 eval "$(starship init bash)"
-EOL
+EOF
 
 echo finished!!
-
