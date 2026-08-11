@@ -1,9 +1,10 @@
-echo doing shit
+#Autorice installer for Pop OS!
+echo Configurating packages...
+echo
 sudo apt update 
 sudo apt remove cosmic* 
 sudo apt install git xdg-desktop-portal* lxpolkit qt5ct qt6ct thunar scrcpy blueman kitty sway swaybg flatpak flameshot steam discord -y
 flatpak install com.dec05eba.gpu_screen_recorder
-flatpak install com.discordapp.Discord
 flatpak install com.github.tchx84.Flatseal
 flatpak install com.heroicgameslauncher.hgl
 flatpak install io.github.peazip.PeaZip 
@@ -15,6 +16,8 @@ flatpak install org.qbittorrent.qBittorrent
 flatpak install org.srb2.SRB2 
 flatpak install org.vinegarhq.Sober
 flatpak install ru.linux_gaming.PortProton 
+echo Configuring Sway config...
+echo
 mkdir $HOME/.config/sway/
 cat << 'EOF' > $HOME/.config/sway/config
 # Default config for sway
@@ -239,6 +242,9 @@ xwayland enable
 include /etc/sway/config.d/*
 
 EOF
+
+echo Setting up misc stuff...
+echo
 sudo apt install git curl bluez-tools gir1.2-gtklayershell-0.1 libgtk-3-0 pulseaudio-utils gir1.2-dbusmenu-gtk3-0.4 gir1.2-playerctl-2.0 playerctl python3-dasbus python3-gi-cairo python3-i3ipc python3-netifaces python3-psutil python3-requests python3-setuptools python3-wheel sway-notification-center
 git clone https://github.com/nwg-piotr/nwg-panel
 git clone https://github.com/nwg-piotr/nwg-icon-picker
